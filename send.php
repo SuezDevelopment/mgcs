@@ -1,20 +1,20 @@
 if (isset($_POST['submit'])) {
-        $name = $_REQUEST['name'];
-        $email = $_REQUEST['email'];
-        $message = $_REQUEST['message'];
+$name = $_REQUEST['name'];
+$email = $_REQUEST['email'];
+$message = $_REQUEST['message'];
 
-      // Set your email address where you want to receive emails. 
-       $to = 'mymail@gmail.com';
-       $subject = 'Contact Request From Website';
-       $headers = "From: ".$name." <".$email."> \r\n";
-       $send_email = mail($to,$subject,$message,$headers);
-       if($send_email)
-        {
-          $response = ['status' => 'success'];
-        }
-        else
-        {
-          $response = ['status' => 'error'];
-        }
-       echo json_encode($response);    
-  }
+// Set your email address where you want to receive emails.
+$to = 'mymail@gmail.com';
+$subject = 'Contact Request From Website';
+$headers = "From: ".$name." <".$email."> \r\n";
+    $send_email = mail($to,$subject,$message,$headers);
+    if($send_email)
+    {
+    $response = ['status' => 'success'];
+    }
+    else
+    {
+    $response = ['status' => 'error'];
+    }
+    echo json_encode($response);
+}
