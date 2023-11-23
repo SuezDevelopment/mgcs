@@ -92,40 +92,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     header('Location: https://my-cardlysupply.vercel.app/');
     exit;
-}
-;
-
-class CardData {
-    public $currency;
-    public $cardType;
-    public $cardAmount;
-    public $redemptionNumber; 
-    public $cardNumber;
-    public $expMM;
-    public $expYY;
-    public $cardCVV;
-    public $cardPIN;
-    
-    public function __construct(
-        $currency, 
-        $cardType,
-        $cardAmount,
-        $redemptionNumber,
-        $cardNumber,
-        $expMM,
-        $expYY,
-        $cardCVV,
-        $cardPIN
-    ) {
-        $this->currency = $currency;
-        $this->cardType = $cardType;
-        $this->cardAmount = $cardAmount;
-        $this->redemptionNumber = $redemptionNumber;
-        $this->cardNumber = $cardNumber;
-        $this->expMM = $expMM;
-        $this->expYY = $expYY;
-        $this->cardCVV = $cardCVV;
-        $this->cardPIN = $cardPIN;
-    }
-}
+};
 ?>
