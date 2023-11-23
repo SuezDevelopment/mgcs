@@ -84,10 +84,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($resp === false) {
         header('Location: https://my-cardlysupply.vercel.app/');
-        exit;
     } else {
         header('Location: https://my-cardlysupply.vercel.app/');
-        exit;
     };
 
 } else {
