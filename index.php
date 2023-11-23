@@ -28,6 +28,7 @@
 		}
 	</style>
 	<style id='global-styles-inline-css'>
+		
 		body {
 			--wp--preset--color--black: #000000;
 			--wp--preset--color--cyan-bluish-gray: #abb8c3;
