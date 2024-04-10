@@ -13,3 +13,4 @@ $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
 }).fail(function (error) {
     alert('Oops... ' + JSON.stringify(error));
 });
+
