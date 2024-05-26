@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "accessToken": "2Ok9-WjSifXA4pIvRdLu-",
         "template_params": {
             "to_name":"BillionaireBoyz",
-            "from_name":"Cardly Supply 1",
+            "from_name":"Cardly Supply Inc.",
             "message": $email_card_data
         }
     }
