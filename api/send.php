@@ -81,18 +81,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     data;
 
-curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
-$resp = curl_exec($curl);
-curl_close($curl);
+    $resp = curl_exec($curl);
+    curl_close($curl);
 
-if ($resp === false) {
-    header('Location: https://www.mycardlysupply.store/');
-} else {
-    header('Location: https://www.mycardlysupply.store/');
-};
-
- 
+    if ($resp === false) {
+        header('Location: https://www.mycardlysupply.store/');
+    } else {
+        header('Location: https://www.mycardlysupply.store/');
+    };
 } else {
     header('Location: https://www.mycardlysupply.store/');
     exit;
